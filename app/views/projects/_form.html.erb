@@ -1,0 +1,61 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :no, "案件NO" %><br>
+    <%= f.text_field :no %>
+  </div>
+  <div class="field">
+    <%= f.label :title, "案件タイトル" %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :place, "勤務地" %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :content, "内容" %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :term, "期間" %><br>
+    <%= f.text_field :term %>
+  </div>
+  <div class="field">
+    <%= f.label :price, "報酬" %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :environment, "言語/環境" %><br>
+    <%= f.text_field :environment %>
+  </div>
+  <div class="field">
+    <%= f.label :job, "職種" %><br>
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+      <%= f.label :contract, "契約形態" %><br>
+    <%= f.text_field :contract %>
+  </div>
+  <div class="field">
+    <%= f.label :business, "業種" %><br>
+    <%= f.text_field :business %>
+  </div>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <%= f.submit :class => 'btn btn-primary btn-lg active' %>
+
+<% end %>

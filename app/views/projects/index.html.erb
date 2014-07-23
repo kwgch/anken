@@ -1,0 +1,110 @@
+<%= search_form_for @q do |f| %>
+<div class="row">
+  <div class="col-md-1 text-right">
+    <%= f.label :no, "案件NO" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :no_start %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :title, "タイトル" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :title_cont %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :place, "勤務地" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :place_cont %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1 text-right">
+    <%= f.label :content, "内容" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :content_cont %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :term, "期間" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :term_cont %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :price, "報酬" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :price_cont %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1 text-right">
+    <%= f.label :environment, "言語/環境" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :environment_cont %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :job, "職種/人数" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :job_cont %>
+  </div>
+  <div class="col-md-1 text-right">
+    <%= f.label :contract, "契約形態" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :contract_cont %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-1 text-right">
+    <%= f.label :business, "業種" %>
+  </div>
+  <div class="col-md-2">
+    <%= f.search_field :business_cont %>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="col-md-2">
+    <%= f.submit '検索', :class => 'btn btn-primary btn-lg active' %>
+  </div>
+</div>
+<% end %>
+
+<br>
+
+<%= will_paginate %>
+<div class="row show-grid">
+  <div class="col-md-2"><strong>案件NO</strong></div>
+  <div class="col-md-2"><strong>案件タイトル</strong></div>
+  <div class="col-md-2"><strong>勤務地</strong></div>
+  <div class="col-md-2"><strong>期間</strong></div>
+  <div class="col-md-1">　</div>
+  <div class="col-md-1">　</div>
+  <div class="col-md-1">　</div>
+</div>
+
+<% @projects.each do |project| %>
+<div class="row show-grid">
+  <div class="col-md-2"><%= project.no %></div>
+  <div class="col-md-2"><%= project.title %></div>
+  <div class="col-md-2"><%= project.place %></div>
+  <div class="col-md-2"><%= project.term %></div>
+
+  <div class="col-md-1"><%= link_to '参照', project %></div>
+  <div class="col-md-1"><%= link_to '編集', edit_project_path(project) %></div>
+  <div class="col-md-1"><%= link_to '削除', project, method: :delete, data: { confirm: '削除します。よろしいですか？' } %></div>
+</div>
+<% end %>
+<%= will_paginate %>
+
+<br>
+
+<%= link_to '新規登録', new_project_path, class: "btn btn-primary btn-lg active" %>

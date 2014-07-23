@@ -1,0 +1,53 @@
+
+<p>
+  <strong>案件NO:</strong>
+  <%= @project.no %>
+</p>
+
+<p>
+  <strong>案件タイトル:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>勤務地:</strong>
+  <%= @project.place %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @project.content %>
+</p>
+
+<p>
+  <strong>期間:</strong>
+  <%= @project.term %>
+</p>
+
+<p>
+  <strong>報酬:</strong>
+  <%= @project.price %>
+</p>
+
+<p>
+  <strong>言語/環境:</strong>
+  <%= @project.environment %>
+</p>
+
+<p>
+  <strong>職種/人数:</strong>
+  <%= @project.job %>
+</p>
+
+<p>
+  <strong>契約形態:</strong>
+  <%= @project.contract %>
+</p>
+
+<p>
+  <strong>業種:</strong>
+  <%= @project.business %>
+</p>
+
+<%= link_to '編集', edit_project_path(@project), class: "btn btn-primary btn-lg active" %> 
+<%= link_to '戻る', projects_path, class: "btn btn-primary btn-lg active" %>

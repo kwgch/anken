@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>案件情報</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-header">
+        <%= link_to "案件情報", root_path, id: "logo", class: "navbar-brand" %>
+      </div>
+      <div class="navbar-header navbar-right">
+        <ul class="nav navbar-nav">
+          <% if user_signed_in? %>
+          <li>Logged in as <strong><%= current_user.email %></strong>.</li>
+          <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <% if notice %>
+    <div class="alert alert-info"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+    <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
+</html>
