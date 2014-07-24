@@ -1,12 +1,12 @@
 <h1>案件編集</h1>
 
-<%= render 'form' %>
+<%= render 'form', type: "edit" %>
 
   </div>
   <div class="col-md-1">
-    <%= link_to '参照', @project, class: "btn btn-primary btn-lg active"  %>
+    <%= link_to '参照', @project, class: "btn btn-primary active"  %>
   </div>
   <div class="col-md-1">
-    <%= link_to '戻る', projects_path, class: "btn btn-primary btn-lg active"  %>
+    <%= link_to '戻る', projects_path, class: "btn btn-primary active"  %>
   </div>
 </div>

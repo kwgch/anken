@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   def index
 #     @projects = Project.all
     @q = Project.search(params[:q])
-    @projects = @q.result.paginate(page: params[:page], per_page: 10)
+    @projects = @q.result.paginate(page: params[:page], per_page: 5)
   end
 
   def search

@@ -1,53 +1,56 @@
 
-<p>
-  <strong>案件NO:</strong>
-  <%= @project.no %>
-</p>
+<table class="table table-hover table-bordered table-striped">
+<tr>
+  <th class="text-right">案件NO:</th>
+  <td><%= @project.no %></td>
+</tr>
 
-<p>
-  <strong>案件タイトル:</strong>
-  <%= @project.title %>
-</p>
+<tr>
+  <th class="text-right">案件タイトル:</th>
+  <td><%= @project.title %></td>
+</tr>
 
-<p>
-  <strong>勤務地:</strong>
-  <%= @project.place %>
-</p>
+<tr>
+  <th class="text-right">勤務地:</th>
+  <td><%= @project.place %></td>
+</tr>
 
-<p>
-  <strong>内容:</strong>
-  <%= @project.content %>
-</p>
+<tr>
+  <th class="text-right">内容:</th>
+  <td><%= @project.content %></td>
+</tr>
 
-<p>
-  <strong>期間:</strong>
-  <%= @project.term %>
-</p>
+<tr>
+  <th class="text-right">期間:</th>
+  <td><%= @project.term %></td>
+</tr>
 
-<p>
-  <strong>報酬:</strong>
-  <%= @project.price %>
-</p>
+<tr>
+  <th class="text-right">報酬:</th>
+  <td><%= @project.price %></td>
+</tr>
 
-<p>
-  <strong>言語/環境:</strong>
-  <%= @project.environment %>
-</p>
+<tr>
+  <th class="text-right">言語/環境:</th>
+  <td><%= @project.environment %></td>
+</tr>
 
-<p>
-  <strong>職種/人数:</strong>
-  <%= @project.job %>
-</p>
+<tr>
+  <th class="text-right">職種/人数:</th>
+  <td><%= @project.job %></td>
+</tr>
 
-<p>
-  <strong>契約形態:</strong>
-  <%= @project.contract %>
-</p>
+<tr>
+  <th class="text-right">契約形態:</th>
+  <td><%= @project.contract %></td>
+</tr>
 
-<p>
-  <strong>業種:</strong>
-  <%= @project.business %>
-</p>
+<tr>
+  <th class="text-right">業種:</th>
+  <td><%= @project.business %></td>
+</tr>
 
-<%= link_to '編集', edit_project_path(@project), class: "btn btn-primary btn-lg active" %> 
-<%= link_to '戻る', projects_path, class: "btn btn-primary btn-lg active" %>
+</table>
+
+<%= link_to '編集', edit_project_path(@project), class: "btn btn-primary active" %> 
+<%= link_to '戻る', projects_path, class: "btn btn-primary active" %>
